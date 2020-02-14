@@ -14,10 +14,10 @@ namespace Pedidos
     {
         int[] id = new int[10];
         int j = 1;
-        int qtd = 0;
-        double preço = 0;
-        int total;
-        string nome;
+        double qtd, preço;
+        double total = 0, totalGeral = 0;
+        double pro_Total = 0;
+        string desconto;
         ListViewItem listitem;       
         public Form1()
         {
@@ -27,35 +27,67 @@ namespace Pedidos
         {
             textBox_ID.Text = Convert.ToString("00" + j);
             textBox_ID.Enabled = false;
+            textBox_Desconto.Enabled = false;
+            textBox_Total.Enabled = false;
+
         }        
         private void button_Salvar_Click(object sender, EventArgs e)
         {
-            if (textBox_Nome.Text == "")
+            if (textBox_Preço.Text != "")
             {
-                MessageBox.Show("Digite um nome!!");
-            }
-            else
-            {                
-                nome = textBox_Nome.Text;                
+                if (textBox_QTD.Text == "")
+                {
+                    textBox_QTD.Text = Convert.ToString(1);
+                }
+                qtd = Convert.ToDouble(textBox_QTD.Text);
                 preço = Convert.ToDouble(textBox_Preço.Text);
-                listitem = listView_Pedidos.Items.Add(textBox_ID.Text);                
-                listitem.SubItems.Add(nome);
-                listitem.SubItems.Add(dateTimePicker1.ToString());                
-                listitem.SubItems.Add(preço.ToString());
-                textBox_Nome.Text = "";
+
+                total = qtd * preço;
+
+
+                if (total < 100)
+                {
+                    textBox_Desconto.Text = "5%";
+                    totalGeral= total - ((total * 5) / 100);
+                }
+                else if (total >= 100 && total < 500)
+                {
+                    textBox_Desconto.Text = "10%";
+                    totalGeral = total - ((total * 10) / 100);
+                }
+                else if (total >= 500 && total < 1000)
+                {
+                    textBox_Desconto.Text = "20%";
+                    totalGeral = total - ((total * 20) / 100);
+                }
+                else if (total >= 1000)
+                {
+                    textBox_Desconto.Text = "50%";
+                    totalGeral = total - ((total * 50) / 100);
+                }
+
+                desconto = textBox_Desconto.Text;
+                textBox_Total.Text = Convert.ToString(totalGeral);
+
+                /*Adicionando valores no ListView*/
+
+                listitem = listView_Pedidos.Items.Add(textBox_ID.Text);
+                listitem.SubItems.Add(dateTimePicker1.Text);
+                listitem.SubItems.Add(textBox_QTD.Text);
+                listitem.SubItems.Add(textBox_Preço.Text);
+                listitem.SubItems.Add(desconto);
+                listitem.SubItems.Add(Convert.ToString(totalGeral));
+                pro_Total += pro_Total + totalGeral;
+                textBox_AllTotal.Text = Convert.ToString(pro_Total);
                 j++;
                 textBox_ID.Text = Convert.ToString("00" + j);
-            }
-            if (textBox_QTD.Text == "")
-            {
-                MessageBox.Show("Digite uma quantidade!!");
+
             }
             else
             {
-                qtd = Convert.ToInt32(textBox_QTD.Text);
-                listitem = listView_Pedidos.Items.Add(textBox_QTD.Text);
-                listitem.SubItems.Add(qtd.ToString());
+                MessageBox.Show("O campo preço precisa ser inserido");
             }
+
         }
 
         private void button_Sair_Click(object sender, EventArgs e)

@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listView_Pedidos = new System.Windows.Forms.ListView();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_Sair = new System.Windows.Forms.Button();
             this.button_Salvar = new System.Windows.Forms.Button();
@@ -60,8 +52,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label_Titulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox_Nome = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_Total2 = new System.Windows.Forms.Label();
+            this.textBox_AllTotal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -114,62 +106,49 @@
             // listView_Pedidos
             // 
             this.listView_Pedidos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14});
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
             this.listView_Pedidos.HideSelection = false;
-            this.listView_Pedidos.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7});
-            this.listView_Pedidos.Location = new System.Drawing.Point(12, 341);
+            this.listView_Pedidos.Location = new System.Drawing.Point(18, 314);
             this.listView_Pedidos.Name = "listView_Pedidos";
             this.listView_Pedidos.Size = new System.Drawing.Size(631, 97);
             this.listView_Pedidos.TabIndex = 5;
             this.listView_Pedidos.UseCompatibleStateImageBehavior = false;
             this.listView_Pedidos.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader8
+            // columnHeader1
             // 
-            this.columnHeader8.Text = "ID";
-            this.columnHeader8.Width = 50;
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 80;
             // 
-            // columnHeader9
+            // columnHeader2
             // 
-            this.columnHeader9.Text = "Nome";
-            this.columnHeader9.Width = 80;
+            this.columnHeader2.Text = "Data Pedido";
+            this.columnHeader2.Width = 220;
             // 
-            // columnHeader10
+            // columnHeader3
             // 
-            this.columnHeader10.Text = "Data Pedido";
-            this.columnHeader10.Width = 200;
+            this.columnHeader3.Text = "QTD";
+            this.columnHeader3.Width = 80;
             // 
-            // columnHeader11
+            // columnHeader4
             // 
-            this.columnHeader11.Text = "QTD";
+            this.columnHeader4.Text = "Preço";
+            this.columnHeader4.Width = 80;
             // 
-            // columnHeader12
+            // columnHeader5
             // 
-            this.columnHeader12.Text = "Preço";
-            this.columnHeader12.Width = 80;
+            this.columnHeader5.Text = "Desconto";
+            this.columnHeader5.Width = 80;
             // 
-            // columnHeader13
+            // columnHeader6
             // 
-            this.columnHeader13.Text = "Desconto";
-            this.columnHeader13.Width = 80;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Total";
-            this.columnHeader14.Width = 70;
+            this.columnHeader6.Text = "Total";
+            this.columnHeader6.Width = 80;
             // 
             // groupBox1
             // 
@@ -267,37 +246,37 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pedidos.Properties.Resources.pedidos_png_1;
-            this.pictureBox1.Location = new System.Drawing.Point(447, 78);
+            this.pictureBox1.Location = new System.Drawing.Point(456, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 117);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox_Nome
+            // label_Total2
             // 
-            this.textBox_Nome.Location = new System.Drawing.Point(112, 94);
-            this.textBox_Nome.Name = "textBox_Nome";
-            this.textBox_Nome.Size = new System.Drawing.Size(264, 20);
-            this.textBox_Nome.TabIndex = 16;
+            this.label_Total2.AutoSize = true;
+            this.label_Total2.Location = new System.Drawing.Point(469, 463);
+            this.label_Total2.Name = "label_Total2";
+            this.label_Total2.Size = new System.Drawing.Size(45, 13);
+            this.label_Total2.TabIndex = 18;
+            this.label_Total2.Text = "TOTAL:";
             // 
-            // label8
+            // textBox_AllTotal
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 97);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "NOME:";
+            this.textBox_AllTotal.Location = new System.Drawing.Point(520, 460);
+            this.textBox_AllTotal.Name = "textBox_AllTotal";
+            this.textBox_AllTotal.Size = new System.Drawing.Size(129, 20);
+            this.textBox_AllTotal.TabIndex = 19;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(655, 450);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox_Nome);
+            this.ClientSize = new System.Drawing.Size(671, 488);
+            this.Controls.Add(this.textBox_AllTotal);
+            this.Controls.Add(this.label_Total2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label_Titulo);
             this.Controls.Add(this.dateTimePicker1);
@@ -344,15 +323,14 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label_Titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox_Nome;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader11;
-        private System.Windows.Forms.ColumnHeader columnHeader12;
-        private System.Windows.Forms.ColumnHeader columnHeader13;
-        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private System.Windows.Forms.Label label_Total2;
+        private System.Windows.Forms.TextBox textBox_AllTotal;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 
